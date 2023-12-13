@@ -12,8 +12,12 @@ createApp({
     mounted(){
         axios.get('https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js')
         .then(response=>{
-            this.mail= response.data.response.map(mailOgg => mailOgg.email);
-            console.log(this);
+            this.mail.push(response.data.response.email);
+
+            if (this.mail.lenght < 10){
+                
+            }
+            
         })
     }
 }).mount('#app')
